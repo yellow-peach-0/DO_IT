@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrap {
+      width: 100%;
+      height: 100%;
+    }
+
+    #box {
+      background-color: whitesmoke;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0 auto;
+      width: 40%;
+
+    }
+
+    #title {
+      width: 611px;
+      height: 346px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 65px;
+      line-height: 87px;
+      z-index: 1;
+      top: 10%;
+
+
+
+
+    }
+
+    .dot {
+      color: orange;
+    }
+
+    .age {
+      color: white;
+    }
+
+    #circle {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      background: #FF8A00;
+      z-index: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-45%);
+
+    }
+
+    #wrap2 {
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
+    #wrap #box2 {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="box">
+      <div id="title">
+        <div id="tex"><span><span class="age">10대</span>의 끝<span class="dot">,</span><br />
+            <span class="age">20대</span>의 시작에서<span class="dot">.</span></span>
+        </div>
+        <div id="circle"></div>
+      </div>
+
+
+    </div>
+  </div>
+
+</body>
+
+</html>
