@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let array1 = [0, 2, 4, 5, , 77, 435, 4, 32]
+    let array2 = [1, 2, 3, 5, 234, 24, 233, 36]
+
+    var compare = document.querySelector('body')
+    for (i in array1) {
+      if (array1[i] < array2[i]) {
+        compare.innerHTML += 'array1 < array2<br/>'
+      } else if (array1[i] > array2[i]) {
+        compare.innerHTML += 'array1 > array2<br/>'
+      }
+      else if (array1[i] == array2[i]) {
+        compare.innerHTML += 'array1 = array2<br/>'
+      }
+    };
+
+  </script>
+</body>
+
+</html>

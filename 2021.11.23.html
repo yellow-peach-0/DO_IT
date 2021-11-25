@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>move_box</title>
+  <style>
+    #box {
+      position: absolute;
+      margin-top: 100px;
+      line-height: 200px;
+      background-color: lightpink;
+      border: 18px solid darkblue;
+      width: 200px;
+      height: 200px;
+      text-align: center;
+      font-size: 50px;
+      color: black;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn">
+    <button id="btn-left" onClick="moveleft()">왼쪽으로 이동</button>
+    <button id="btn-right" onClick="moveright()">오른쪽으로 이동</button>
+  </div>
+  <div id="box">BOX</div>
+  <script>
+    var boxEl = document.getElementById('box');
+    var step = 0;
+
+    function moveleft() {
+      step -= 100;
+      boxEl.style.left = step + 'px';
+      /*boxEl.style.left += '1px'*/
+    };
+
+    function moveright() {
+      step += 100;
+      boxEl.style.left = step + "px";
+    };
+
+
+
+
+  </script>
+</body>
+
+</html>

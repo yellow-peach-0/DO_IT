@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>도형그리기</title>
+  <style>
+    @font-face {
+      font-family: 'OTWelcomeBA';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // function shot()  {
+    //   for(i= 0; i < 400; i+=10)
+
+    // }
+
+    ellipse(100, 100, 100, 100);
+    function ellipse(w, h, x, y) {
+      document.getElementsByTagName('body')[0].innerHTML = '<div style="position: absolute; border: solid; border-radius: 50%; width:' + w + 'px; height: ' + h + 'px; left:' + x + 'px; top:' + y + 'px;"></div>'
+    }
+
+
+  </script>
+</body>
+
+</html>

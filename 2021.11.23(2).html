@@ -1,0 +1,90 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #menu-panel {
+      display: visible;
+      position: fixed;
+      top: 30px;
+      left: 8px;
+      background-color: #efefef;
+      width: 30%;
+      min-width: 200px;
+      max-width: 400px;
+    }
+
+    #menu-panel>ul {
+      padding: 0;
+    }
+
+    #menu-panel>ul>li {
+      list-style: none;
+      padding: 8px;
+    }
+
+    #menu-panel>ul>li:hover {
+      background-color: #fefefe;
+      cursor: pointer;
+    }
+  </style>
+</head>a
+
+<body>
+  <button onclick="toggle()">메뉴</button>
+  <div id="menu-panel">
+    <ul>
+      <li>홈</li>
+      <li>프로젝트 소개</li>
+      <li>팀 소개</li>
+      <li>미디어</li>
+    </ul>
+  </div>
+
+  <script>
+
+    //ver.1
+    // var A = document.getElementById('menu-panel')
+    // var flag = true;
+
+    // console.log(flag);
+
+    // function toggle() {
+    //   if (flag) {
+    //     A.classList.add("hidden");
+    //     flag = false;
+    //   } else {
+    //     A.classList.remove("hidden");
+    //     flag = true;
+    //   };
+
+    // };
+
+    //ver.2
+    //  var menu = document.getElementById("menu-panel")
+
+    //   function toggle() {
+    //     menu.classList.toggle("hidden");
+    //   }
+
+    //ver.3...
+    var A = document.getElementById('menu-panel');
+
+    A[0, 3]
+
+    function toggle() {
+      A.style.display = "none";
+    };
+
+    // function toggle() {
+    //   if (A == hidden) {
+    //     A = "visible";
+    //   } else if (A == visible) {
+    //     A = "hidden";
+    //   };
+    // };
+
+  </script>
+</body>
+
+</html>
