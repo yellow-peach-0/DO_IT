@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+  <link type="text/css" rel="stylesheet" href="compute.css">
+</head>
+
+<body>
+  <div id="dis"></div>
+
+  <div id="buttons">
+    <div class="box">
+      <div onclick="AC()">AC</div>
+      <div>+/-</div>
+      <div>%</div>
+      <div>÷</div>
+    </div>
+
+    <div class="box">
+      <div id="seven" onclick="drawNumber(7)">7</div>
+      <div id="eight" onclick="drawNumber(8)">8</div>
+      <div id="nine" onclick="drawNumber(9)">9</div>
+      <div id="multiply">x</div>
+    </div>
+
+    <div class="box">
+      <div id="four" onclick="drawNumber(4)">4</div>
+      <div id="five" onclick="drawNumber(5)">5</div>
+      <div id="six" onclick="drawNumber(6)">6</div>
+      <div id="minus">-</div>
+    </div>
+
+    <div class="box">
+      <div id="one" onclick="drawNumber(1)">1</div>
+      <div id="two" onclick="drawNumber(2)">2</div>
+      <div id="three" onclick="drawNumber(3)">3</div>
+      <div id="plus">+</div>
+    </div>
+
+    <div class="box">
+      <div id="zero" style="width: 700px;" onclick="drawNumber(0)">0</div>
+      <div id="dot" onclick="drawNumber('.')">.</div>
+      <div id="equal">=</div>
+    </div>
+  </div>
+
+
+
+  <script>
+    var display = document.querySelector("#dis");
+
+    function AC() {
+      display.innerHTML = ""
+    }
+
+    function drawNumber(x) {
+      display.innerHTML += x
+    }
+
+
+  </script>
+</body>
+
+</html>
