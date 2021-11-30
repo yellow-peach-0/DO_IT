@@ -8,7 +8,8 @@
   <title>계산기</title>
   <style>
     body,
-    p {
+    p,
+    input {
       margin: 0;
       padding: 0;
     }
@@ -72,29 +73,29 @@
     </div>
 
     <div class="box">
-      <div id="seven" onclick="drawNumber(7)">7</div>
-      <div id="eight" onclick="drawNumber(8)">8</div>
-      <div id="nine" onclick="drawNumber(9)">9</div>
+      <div id="seven" class="numbers" onclick="drawNumber(7)">7</div>
+      <div id="eight" class="numbers" onclick="drawNumber(8)">8</div>
+      <div id="nine" class="numbers" onclick="drawNumber(9)">9</div>
       <div id="multiply" onclick="compute('*')">x</div>
     </div>
 
     <div class="box">
-      <div id="four" onclick="drawNumber(4)">4</div>
-      <div id="five" onclick="drawNumber(5)">5</div>
-      <div id="six" onclick="drawNumber(6)">6</div>
+      <div id="four" class="numbers" onclick="drawNumber(4)">4</div>
+      <div id="five" class="numbers" onclick="drawNumber(5)">5</div>
+      <div id="six" class="numbers" onclick="drawNumber(6)">6</div>
       <div id="minus" onclick="compute('-')">-</div>
     </div>
 
     <div class="box">
-      <div id="one" onclick="drawNumber(1)">1</div>
-      <div id="two" onclick="drawNumber(2)">2</div>
-      <div id="three" onclick="drawNumber(3)">3</div>
+      <div id="one" class="numbers" onclick="drawNumber(1)">1</div>
+      <div id="two" class="numbers" onclick="drawNumber(2)">2</div>
+      <div id="three" class="numbers" onclick="drawNumber(3)">3</div>
       <div id="plus" onclick="compute('+')">+</div>
     </div>
 
     <div class="box">
-      <div id="zero" style="width: 700px;" onclick="drawNumber(0)">0</div>
-      <div id="dot" onclick="drawNumber('.')">.</div>
+      <div id="zero" class="numbers" style="width: 700px;" onclick="drawNumber(0)">0</div>
+      <div id="dot" class="numbers" onclick="drawNumber('.')">.</div>
       <div id="equal" onclick="equal()">=</div>
     </div>
 
@@ -105,36 +106,41 @@
 
 
   <script>
+    // var display = document.querySelector("#dis");
+    // var line = document.querySelector('#line');
+
+    // function AC() {
+    //   display.value = "";
+    //   line.value = "";
+    // }
+
+    // function drawNumber(x) {
+    //   display.value += x;
+    //   line.value += x;
+    // }
+
+    // function compute(x) {
+    //   display.value = x;
+    //   line.value += x;
+    // }
+
+    // function equal() {
+    //   var result = eval(line.value);
+    //   display.value = result;
+    // }
+  </script>
+  <script>
     var display = document.querySelector("#dis");
-    var line = document.querySelector('#line');
+    var line = document.querySelector("#line");
+    var button = document.querySelector("#buttons");
+    var num = document.querySelector(".numbers");
+    var memo;
 
-    function AC() {
-      display.value = "";
-      line.value = "";
+    function onClick(e) {
+      alert(e.target)
     }
 
-    function drawNumber(x) {
-      display.value += x;
-      line.value += x;
-    }
-
-    function compute(x) {
-      display.value = x;
-      line.value += x;
-    }
-
-
-    function equal() {
-      var result = eval(line.value);
-      display.value = result;
-    }
-
-    function exchange() {
-      display.value = -display.value
-      line.value = -line.value;
-    }
-
-
+    button.addEventListener('click', onClick)
   </script>
 </body>
 
