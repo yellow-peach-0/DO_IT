@@ -6,7 +6,58 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>계산기</title>
-  <link type="text/css" rel="stylesheet" href="compute.css">
+  <style>
+    body,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    #line {
+      display: none;
+    }
+
+    #dis {
+      width: 100%;
+      height: 16vh;
+      background-color: black;
+      color: white;
+      border-bottom: solid 2px gray;
+      border-top: solid 2px gray;
+      text-align: right;
+      font-size: 80px;
+    }
+
+    /* buttons */
+
+    #buttons {
+      background-color: black;
+      color: white;
+    }
+
+    .box {
+      width: 100%;
+      height: 17vh;
+      background-color: black;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+
+    .box div {
+      width: 350px;
+      height: 50px;
+      padding: 40px 0;
+      background-color: gray;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .box div:last-child {
+      background-color: orange;
+    }
+  </style>
 </head>
 
 <body>
@@ -55,6 +106,7 @@
 
   <script>
     var display = document.querySelector("#dis");
+    var line = document.querySelector('#line');
 
     function AC() {
       display.value = "";
@@ -62,11 +114,7 @@
     }
 
     function drawNumber(x) {
-      if (display.length > 0) {
-        display.value = null;
-      } else if (display.length == 0) {
-        display.value += x;
-      }
+      display.value += x;
       line.value += x;
     }
 
@@ -77,9 +125,13 @@
 
 
     function equal() {
-      var line = document.querySelector('#line');
       var result = eval(line.value);
       display.value = result;
+    }
+
+    function exchange() {
+      display.value = -display.value
+      line.value = -line.value;
     }
 
 
