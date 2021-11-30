@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: skyblue;
+    }
+
+    .menu-active {
+      background-color: orange;
+    }
+
+    .menu {
+      display: flex;
+      position: relative;
+      justify-content: space-evenly;
+      top: 100px;
+      left: 200px;
+      background-color: black;
+    }
+
+    .menu-link {
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="menu">
+    <a href="#" class="menu-link" data-menu="1">menu 1</a>
+    <a href="#" class="menu-link" data-menu="2">menu 2</a>
+    <a href="#" class="menu-link" data-menu="3">menu 3</a>
+  </nav>
+
+  <script>
+    // var menuLinks = document.querySelectorAll('.menu-link');
+    // var currentMenu;
+
+    // function clickMenuHandler() {
+    //   if (currentMenu) {
+    //     currentMenu.classList.remove('menu-active');
+    //   }
+    //   this.classList.add('menu-active');
+    //   currentMenu = this;
+    // }
+
+    // for (i = 0; i < menuLinks.length; i++) {
+    //   menuLinks[i].addEventListener('click', clickMenuHandler)
+    // }
+
+    var menu = document.querySelector('.menu')
+    var currentMenu;
+
+    function onClick(e) {
+      if (currentMenu) {
+        currentMenu.classList.remove('menu-active');
+      }
+      e.target.classList.add('menu-active');
+      currentMenu = e.target;
+    }
+
+    menu.addEventListener('click', onClick)
+  </script>
+</body>
+
+</html>

@@ -4,12 +4,17 @@ body, p {
   padding: 0;
 }
 
+#line {
+  display: none;
+}
+
 #dis {
   width: 100%;
   height: 16vh;
   background-color: black;
   color: white;
-  border: solid 2px gray;
+  border-bottom: solid 2px gray;
+  border-top: solid 2px gray;
   text-align: right;
   font-size: 80px;
 }
@@ -19,7 +24,6 @@ body, p {
 #buttons {
   background-color: black;
   color: white;
-  border: solid 2px gray;
 }
 
 .box {

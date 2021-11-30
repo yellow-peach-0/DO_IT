@@ -10,43 +10,46 @@
 </head>
 
 <body>
-  <div id="dis"></div>
+  <input type="text" id="dis"></input>
 
   <div id="buttons">
     <div class="box">
       <div onclick="AC()">AC</div>
       <div>+/-</div>
-      <div>%</div>
-      <div>÷</div>
+      <div onclick="drawNumber('%')">%</div>
+      <div onclick="compute('/')">÷</div>
     </div>
 
     <div class="box">
       <div id="seven" onclick="drawNumber(7)">7</div>
       <div id="eight" onclick="drawNumber(8)">8</div>
       <div id="nine" onclick="drawNumber(9)">9</div>
-      <div id="multiply">x</div>
+      <div id="multiply" onclick="compute('*')">x</div>
     </div>
 
     <div class="box">
       <div id="four" onclick="drawNumber(4)">4</div>
       <div id="five" onclick="drawNumber(5)">5</div>
       <div id="six" onclick="drawNumber(6)">6</div>
-      <div id="minus">-</div>
+      <div id="minus" onclick="compute('-')">-</div>
     </div>
 
     <div class="box">
       <div id="one" onclick="drawNumber(1)">1</div>
       <div id="two" onclick="drawNumber(2)">2</div>
       <div id="three" onclick="drawNumber(3)">3</div>
-      <div id="plus">+</div>
+      <div id="plus" onclick="compute('+')">+</div>
     </div>
 
     <div class="box">
       <div id="zero" style="width: 700px;" onclick="drawNumber(0)">0</div>
       <div id="dot" onclick="drawNumber('.')">.</div>
-      <div id="equal">=</div>
+      <div id="equal" onclick="equal()">=</div>
     </div>
+
+    <input type="text" id="line"></input>
   </div>
+
 
 
 
@@ -54,11 +57,29 @@
     var display = document.querySelector("#dis");
 
     function AC() {
-      display.innerHTML = ""
+      display.value = "";
+      line.value = "";
     }
 
     function drawNumber(x) {
-      display.innerHTML += x
+      if (display.length > 0) {
+        display.value = null;
+      } else if (display.length == 0) {
+        display.value += x;
+      }
+      line.value += x;
+    }
+
+    function compute(x) {
+      display.value = x;
+      line.value += x;
+    }
+
+
+    function equal() {
+      var line = document.querySelector('#line');
+      var result = eval(line.value);
+      display.value = result;
     }
 
 
