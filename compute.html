@@ -64,7 +64,8 @@
 <body>
   <input type="text" id="dis"></input>
 
-  <div id="buttons">
+  <!-- 온클릭 -->
+  <!-- <div id="buttons">
     <div class="box">
       <div onclick="AC()">AC</div>
       <div>+/-</div>
@@ -99,45 +100,107 @@
       <div id="equal" onclick="equal()">=</div>
     </div>
 
-    <input type="text" id="line"></input>
+  </div> -->
+
+  <!-- <script>
+    var display = document.querySelector("#dis");
+    var line = document.querySelector('#line');
+
+    function AC() {
+      display.value = "";
+      line.value = "";
+    }
+
+    function drawNumber(x) {
+      if (display.style.color == "orange") {
+        display.value = null;
+      }
+      display.style.color = "white";
+      display.value += x;
+      line.value += x;
+    }
+
+    function compute(x) {
+      display.style.color = "orange";
+      line.value += x;
+    }
+
+    function equal() {
+      var result = eval(line.value);
+      display.value = result;
+    }
+  </script> -->
+
+  <!-- 클릭이벤트 -->
+  <div id="buttons">
+    <div class="box">
+      <div>AC</div>
+      <div>+/-</div>
+      <div>%</div>
+      <div>÷</div>
+    </div>
+
+    <div class="box">
+      <div id="seven" class="numbers">7</div>
+      <div id="eight" class="numbers">8</div>
+      <div id="nine" class="numbers">9</div>
+      <div id="multiply">x</div>
+    </div>
+
+    <div class="box">
+      <div id="four" class="numbers">4</div>
+      <div id="five" class="numbers">5</div>
+      <div id="six" class="numbers">6</div>
+      <div id="minus">-</div>
+    </div>
+
+    <div class="box">
+      <div id="one" class="numbers">1</div>
+      <div id="two" class="numbers">2</div>
+      <div id="three" class="numbers">3</div>
+      <div id="plus">+</div>
+    </div>
+
+    <div class="box">
+      <div id="zero" class="numbers" style="width: 700px;">0</div>
+      <div id="dot" class="numbers">.</div>
+      <div id="equal">=</div>
+    </div>
+
   </div>
 
+  <input type="text" id="line"></input>
 
-
-
-  <script>
-    // var display = document.querySelector("#dis");
-    // var line = document.querySelector('#line');
-
-    // function AC() {
-    //   display.value = "";
-    //   line.value = "";
-    // }
-
-    // function drawNumber(x) {
-    //   display.value += x;
-    //   line.value += x;
-    // }
-
-    // function compute(x) {
-    //   display.value = x;
-    //   line.value += x;
-    // }
-
-    // function equal() {
-    //   var result = eval(line.value);
-    //   display.value = result;
-    // }
-  </script>
   <script>
     var display = document.querySelector("#dis");
     var line = document.querySelector("#line");
-    var button = document.querySelector("#buttons");
-    var num = document.querySelector(".numbers");
-    var memo;
+    var button = document.querySelector("#buttons")
 
     function onClick(e) {
-      alert(e.target)
+      var button = e.target.innerHTML;
+      if (button == "0" || button == "1" || button == "2" || button == "3" || button == "4" || button == "5" || button == "6" || button == "7" || button == "8" || button == "9") {
+        if (display.style.color == "orange") {
+          display.style.color = "white";
+          display.value = null;
+        }
+        display.value += button
+        line.value += button;
+      } else if (button == "AC") {
+        display.value = null;
+        line.value = null;
+      } else if (button == "+" || button == "-" || button == "x" || button == "÷") {
+        if (button == "x") {
+          button = "*"
+        } else if (button == "÷") {
+          button = "/"
+        }
+        display.style.color = "orange";
+        line.value += button;
+
+      } else if (button == "=") {
+        display.value = eval(line.value);
+      }
+
     }
 
     button.addEventListener('click', onClick)
