@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      bottom: 0;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1></h1>
+
+  <div></div>
+
+  <script>
+    let num = document.querySelector("h1")
+    let box = document.querySelector("div")
+    let y = 0;
+
+    function move() {
+      num.innerHTML = y;
+      box.style.transform = `translateY(${y}px)`
+      y += 10
+
+      var rId = requestAnimationFrame(move);
+
+      if (y > 500) {
+        cancelAnimationFrame(rId);
+      }
+    }
+
+    move();
+
+  </script>
+</body>
+
+</html>

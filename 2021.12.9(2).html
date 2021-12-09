@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팝업js</title>
+  <style>
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal_overlay {
+      background: rgba(0, 0, 0, 0.6);
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal_content {
+      background: #fff;
+      padding: 20px;
+      position: fixed;
+      box-shadow: 0 14px 28px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="open">open</button>
+
+  <div class="modal">
+    <div class="modal_overlay"></div>
+    <div class="modal_content">
+      <h1>hello world</h1>
+      <button id="x">x</button>
+    </div>
+  </div>
+
+  <script>
+    const openButton = document.querySelector("#open");
+    const modal = document.querySelector(".modal");
+    const closeButton = document.querySelector("#x");
+
+    const open = () => {
+      modal.classList.remove("hidden")
+    }
+
+    const close = () => {
+      modal.classList.add("hidden")
+    }
+
+    openButton.addEventListener("click", open)
+    closeButton.addEventListener("click", close)
+  </script>
+</body>
+
+</html>
