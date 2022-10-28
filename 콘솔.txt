@@ -1,0 +1,20 @@
+[Log] 1600 (main.html, line 348)
+[Log] 1440 (main.html, line 365)
+[Error] TypeError: undefined is not an object (evaluating 'gage[i].style.animation = ""')
+	fullGage (main.html:357)
+> console.log(window.innerWidth)
+[Log] 1440
+< undefined
+> console.log(window.innerWidth)
+[Log] 1440
+< undefined
+[Error] TypeError: undefined is not an object (evaluating 'gage[i].style.animation = ""')
+	fullGage (main.html:357)
+[Error] TypeError: undefined is not an object (evaluating 'gage[i].style.animation = "full 3.5s linear"')
+	fullGage (main.html:353)
+[Error] TypeError: undefined is not an object (evaluating 'gage[i].style.animation = ""')
+	fullGage (main.html:357)
+[Error] TypeError: undefined is not an object (evaluating 'gage[i].style.animation = "full 3.5s linear"')
+	fullGage (main.html:353)
+[Error] TypeError: undefined is not an object (evaluating 'gage[i].style.animation = ""')
+	fullGage (main.html:357)

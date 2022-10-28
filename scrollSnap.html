@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll_snap</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      width: 20vw;
+      height: 20vw;
+      overflow: scroll;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .item {
+      scroll-snap-align: start;
+      width: 20vw;
+      height: 20vw;
+      text-align: center;
+      line-height: 20vw;
+      background-color: blue;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+</body>
+
+</html>

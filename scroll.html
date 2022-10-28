@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scroll이동</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      text-align: center;
+      line-height: 100vh;
+    }
+
+    #b2 {
+      background-color: black;
+      color: white;
+    }
+
+    #nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 5%;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 1;
+    }
+
+    .circle {
+      width: 10px;
+      height: 10px;
+      background-color: blue;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    #nav>div:hover {
+      background-color: chartreuse;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nav">
+    <div class="circle" id="c1"></div>
+    <div class="circle" id="c2"></div>
+    <div class="circle" id="c3"></div>
+  </div>
+
+  <div class="box" id="b1">1</div>
+  <div class="box" id="b2">2</div>
+  <div class="box" id="b3">3</div>
+
+  <script>
+    const cir = document.querySelectorAll(".circle")
+    const box = document.querySelectorAll(".box")
+
+    // cir[0].onclick = () => {
+    //   window.scroll({ top: box[0].offsetTop, behavior: 'smooth' })
+    // }
+
+    // cir[1].addEventListener('click', () => {
+    //   window.scroll({ top: box[1].offsetTop, behavior: 'smooth' })
+    // })
+
+    for (i in nav) {
+      cir[i].addEventListener('click', () => {
+        alert(cir[i])
+        // window.scroll({ top: box[i].offsetTop, behavior: 'smooth' })
+      });
+    }
+
+
+
+  </script>
+</body>
+
+</html>

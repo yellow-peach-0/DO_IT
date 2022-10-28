@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>draw</title>
+  <style>
+    #display {
+      position: absolute;
+      top: 6%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 70vw;
+      height: 60vh;
+      border: solid black 2px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="display">
+
+  </div>
+  <script>
+    const display = document.querySelector("#display")
+
+    display.addEventListener('mousemove', (e) => {
+      console.log(e.offsetX)
+      if (e.offsetX < 10 && e.offsetY < 10) {
+
+      } else {
+        display.innerHTML += `
+      <div style=' border-radius: 50%; position: absolute; left: ${e.offsetX}px; top: ${e.offsetY}px; background-color: black; width: 10px; height: 10px; '><div>`
+      }
+    })
+
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode == 82) {
+        display.innerHTML = ``
+      }
+    })
+
+
+
+
+  </script>
+</body>
+
+</html>

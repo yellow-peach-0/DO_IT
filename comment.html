@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body,
+    p {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    #display {
+      width: 100vw;
+      height: 50vh;
+      background-color: blue;
+      padding: 0;
+    }
+
+    #input {
+      position: relative;
+      top: 100px;
+      left: 50%;
+      transform: translate(-50%);
+      display: flex;
+      flex-direction: column;
+      width: 30vw;
+      padding: 20px;
+      border: solid 3px blue;
+      border-radius: 10px;
+    }
+
+
+    #name {
+      color: white;
+      background-color: blue;
+      border: none;
+    }
+
+    #name::placeholder {
+      color: white;
+    }
+
+    #comment {
+      color: white;
+      background-color: blue;
+      border: none;
+    }
+
+    #comment::placeholder {
+      color: white;
+    }
+
+
+    #push {
+      width: 100px;
+      color: white;
+      background-color: blue;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contentBox {
+      display: flex;
+      width: 100vw;
+      border: solid white 1px;
+    }
+
+    .userName {
+      color: white;
+      border-right: solid white 1px;
+    }
+
+    .comments {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="display">
+    <div class="contentBox">
+      <span class="userName">도영</span>
+      <p class="comments">lorem ipsum</p>
+    </div>
+  </div>
+
+  <div id="input">
+    <input id="name" type="text" placeholder="이름...">
+    <input id="comment" type="text" placeholder="댓글달기...">
+    <button id="push">입력</button>
+  </div>
+
+  <script>
+    let name = document.querySelector("#name")
+    let commentInput = document.querySelector("#comment")
+    let pushbtn = document.querySelector("#push")
+
+    let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+    const updateArray = () => { localStorage.setItem('items', JSON.stringify(itemsArray)) };
+    const data = JSON.parse(localStorage.getItem('items'));
+
+    function create() {
+      // 요소들 생성
+      const display = document.querySelector("#display")
+      const box = document.createElement("div")
+      const userName = document.createElement("span")
+      const mainText = document.createElement("p")
+      // 요소에 css 추가
+      box.classList.add("contentBox")
+      userName.classList.add("userName")
+      mainText.classList.add("comments")
+      // 요소의 text값 input에서 불러오기
+      userName.innerText = name.value;
+      mainText.innerText = commentInput.value;
+      // 요소를 디스플레이에 넣기
+      box.appendChild(userName);
+      box.appendChild(mainText)
+      display.appendChild(box)
+      // name과 comment를 객체화, array에 추가, local에 올리기
+      const commentobj = {
+        name: name.value,
+        text: commentInput.value
+      }
+      console.log(commentobj)
+      data.push(commentobj);
+      updateArray();
+    }
+
+    pushbtn.addEventListener('click', () => {
+      create();
+      name.vale = '';
+      commentInput.value = '';
+    })
+  </script>
+</body>
+
+</html>
